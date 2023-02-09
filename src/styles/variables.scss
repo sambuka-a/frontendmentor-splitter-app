@@ -1,0 +1,41 @@
+//colors primary
+$veryDarkCyan: hsl(183, 100%, 15%);
+$darkGrayishCyan: hsl(186, 14%, 43%);
+$darkGrayishHover: hsl(172, 67%, 45%);
+$grayishCyan: hsl(184, 14%, 56%);
+$lightGrayishCyan: hsl(185, 41%, 84%);
+$veryLightGrayishCyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+$error: hsl(0, 70%, 67%);
+$buttonEffect: hsl(174, 100%, 42%);
+
+//font
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+$jozefinFont: 'Josefin Sans', sans-serif;
+
+//font weight
+$fw-light: 400;
+$fw-regular: 600;
+$fw-bold: 700;
+
+//font sizes
+$fs-sm: 18px;
+$fs-reg: 22px;
+$fs-sb: 32px; 
+
+//breakpoints
+$sm: 767px;
+$lg: 1024px;
+
+@mixin breakpoint($point) {
+    @if $point == sm {
+        @media(min-width: $sm) {
+            @content
+        }
+    }
+    @if $point == lg {
+        @media(min-width: $lg) {
+            @content
+        }
+    }
+}

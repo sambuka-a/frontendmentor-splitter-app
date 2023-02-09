@@ -1,0 +1,222 @@
+@import '../../styles/variables.scss';
+
+.splitter {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: $jozefinFont;
+
+    @include breakpoint(sm) {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flexContainer {
+        display: flex;
+        flex-direction: column;
+        background: $white;
+        border-radius: 15px 15px 0 0; 
+
+        @include breakpoint(sm) {
+            flex-direction: row;
+            border-radius: 15px;
+            margin-top: 60px;
+
+        }
+
+        .left {
+            flex: 1;
+            margin: 20px 20px 0 20px;
+            
+            .contentBill {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 380px;
+                width: 320px;
+                
+                .title {
+                    width: 100%;
+
+                    .titleHeader {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .hide {
+                            opacity: 0;
+                        }
+
+                        .error {
+                            opacity: 1;
+                            color: $error;
+                        }
+                    }
+
+                    .billInput {
+                        position: relative;
+
+                        >input {
+                            text-align: right;
+                            width: 100%;
+                            padding: 10px;
+                            border: none;
+                            border-radius: 5px;
+                            background: $veryLightGrayishCyan;
+                            font-family: $jozefinFont;
+                            font-size: $fs-reg;
+                            color: $darkGrayishCyan;
+                        }
+
+                        >img {
+                            position: absolute;
+                            left: 8px;
+                            bottom: 13px;
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+
+                .selectors {
+                    display: flex;
+                    flex-direction: column;                    
+ 
+                    .selectorsButtons {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        
+                        >input {
+                            width: 150px;
+                            margin: 5px 0;
+                            border: none;
+                            border-radius: 5px;
+                            background-color: $veryLightGrayishCyan;
+                            font-family: $jozefinFont;
+                            font-size: $fs-reg;
+                            color: $darkGrayishCyan;
+                            padding: 0 10px;
+
+                            &:hover {
+                                border: 1px solid $darkGrayishHover;
+                            }
+
+                            @include breakpoint(sm) {
+                                width: 100px;
+                                font-size: $fs-sm;
+                            }
+                        } 
+    
+                        >button {
+                            cursor: pointer;
+                            font-family: $jozefinFont;
+                            padding: 12px 15px;
+                            width: 150px;
+                            margin: 5px 0;
+                            background: $veryDarkCyan;
+                            border: none;
+                            border-radius: 5px;
+                            color: $white;
+                            font-size: $fs-sm;
+
+                            &:hover {
+                                background: $lightGrayishCyan;
+                                color: $veryDarkCyan;
+                            }
+
+                            &:active {
+                                background: $darkGrayishHover;
+                            }
+
+                            @include breakpoint(sm) {
+                                width: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .right {
+            flex: 1;
+            margin: 10px 20px 20px 20px;
+
+            @include breakpoint(sm) {
+                margin: 20px;
+            }
+
+            .content {
+                width: 320px;
+                height: 220px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 15px;
+                background-color: $veryDarkCyan;
+                padding: 20px;
+
+                @include breakpoint(sm) {
+                    height: 360px;
+                    justify-content: space-evenly;
+                    padding: 60px 20px;
+                }
+
+                >button {
+                    cursor: pointer;
+                    width: 100%;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    background: $darkGrayishHover;
+                    text-transform: uppercase;
+                    font-size: $fs-reg;
+                    color: $darkGrayishCyan;
+                    -webkit-transition: all .15s ease-in-out;
+                    transition: all .15s ease-in-out;
+
+                    &:hover {
+                        background-color: $veryDarkCyan;
+                        box-shadow: 0 0 5px 0 $buttonEffect inset, 0 0 10px 1px $buttonEffect;
+                        border: 1px solid $buttonEffect;
+                    }
+
+                    &:disabled {
+                        color: $grayishCyan;
+                        background-color: $darkGrayishCyan;
+                    }
+                }
+
+                .tipAmount,
+                .tipTotal {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    >span {
+                        color: $darkGrayishHover;
+                        font-size: $fs-sb;
+                    }
+
+                    .tipAmountData {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        >span {
+                            color: $white;
+                        }
+
+                        p {
+                            color: $lightGrayishCyan;
+                        }    
+                    }
+                }
+            }
+        }
+    }
+}
